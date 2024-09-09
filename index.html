@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule o IMC</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            border: 2px solid #3498db;
+            padding: 20px;
+            width: 480px;
+            /* Adjusted width */
+            text-align: center;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #ffffff;
+            background: linear-gradient(to right, #87ceeb, #b0e0e6);
+            /* Sky gradient */
+            padding: 10px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /* Subtle shadow */
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            color: #7f8c8d;
+        }
+
+        label {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 80%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #682ecc;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #5252a4;
+            transform: scale(1.05);
+        }
+
+        .result-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        #resultado,
+        #info {
+            border: 2px solid;
+            border-radius: 10px;
+            padding: 15px;
+            width: 48%;
+            /* Adjusted width */
+            background-color: #eafaf1;
+            color: #2ecc71;
+            display: none;
+        }
+
+        #resultado {
+            margin-right: 4%;
+            /* Space between divs */
+        }
+
+        .underweight {
+            border-color: #e67e22;
+            background-color: #f39c12;
+            color: #ffffff;
+        }
+
+        .normal {
+            border-color: #27ae60;
+            background-color: #2ecc71;
+            color: #ffffff;
+        }
+
+        .overweight {
+            border-color: #f39c12;
+            background-color: #f1c40f;
+            color: #ffffff;
+        }
+
+        .obese {
+            border-color: #c0392b;
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calcule o IMC</h1>
+        <img src="./img/imc.jpg" alt="IMC Image">
+        <form action="/" id="imcform" onsubmit="calcularIMC(event)" method="post">
+            <label for="peso">Peso</label>
+            <input type="number" name="peso" id="peso" required="any" step="any">
+            <p></p>
+            <label for="altura">Altura</label>
+            <input type="number" name="altura" id="altura" required="any" step="any">
+            <p></p>
+            <button type="submit">Calcular</button>
+        </form>
+        <div class="result-container">
+            <div id="resultado"></div>
+            <div id="info"></div>
+        </div>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
